@@ -1,2 +1,2 @@
-# gotm.ioNetworkingExample
-simple "chat" game made in godot. you can test it on gotm.io
+# Gotm.io Networking Example
+Simple "chat" game made in godot. You can test it on gotm.io
