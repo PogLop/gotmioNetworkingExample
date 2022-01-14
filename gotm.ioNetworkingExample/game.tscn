@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://game.gd" type="Script" id=1]
+
+[node name="game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 262.0
+margin_top = 111.0
+margin_right = 762.0
+margin_bottom = 489.0
+custom_constants/separation = 100
+
+[node name="text_label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 500.0
+margin_bottom = 14.0
+text = "bruh"
+align = 1
+
+[node name="input" type="LineEdit" parent="CenterContainer/VBoxContainer"]
+margin_top = 114.0
+margin_right = 500.0
+margin_bottom = 138.0
+
+[node name="submit" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 238.0
+margin_right = 500.0
+margin_bottom = 258.0
+rect_min_size = Vector2( 500, 0 )
+text = "submit text"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 358.0
+margin_right = 500.0
+margin_bottom = 378.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="host" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 123.0
+margin_right = 202.0
+margin_bottom = 20.0
+text = "host game"
+
+[node name="join" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 302.0
+margin_right = 377.0
+margin_bottom = 20.0
+text = "join game"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/join" to="." method="_on_join_pressed"]
